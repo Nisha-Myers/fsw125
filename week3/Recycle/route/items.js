@@ -45,15 +45,5 @@ intakeRouter.post('/', (req, res) => {
     res.send(`Successfully added ${newIntake.name} to the database.`)
 });
 
-.delete('/:soda', (req, res) => {
-    const soda = req.params.soda; 
-    const singularItem = items.findIndex(index => index._id === itemsId)
-    index.splice()indexIndex, 1
-;})
-//delete recycleables
-
-.put('/', (req, res) => {
-})
-//put recycleables
 
 module.exports = intakeRouter;
