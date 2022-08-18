@@ -6,7 +6,7 @@ const {v4: uuidv4} = require('uuid');
 
 let items = [
     {
-        name: "water bottle",
+        name: "bottle",
         desc:"Used water bottle",
         recycle: true,
         quantity: 55,
@@ -14,7 +14,7 @@ let items = [
         _id: uuidv4()
     },
     {
-        name: "tuna can",
+        name: "can",
         desc:"Used tuna can ",
         recycle: true,
         quantity: 78,
@@ -22,7 +22,7 @@ let items = [
         _id: uuidv4()
     },
     {
-        name: "soda can",
+        name: "soda",
         desc:"Used soda can",
         recycle: true,
         quantity: 102,
@@ -45,7 +45,15 @@ intakeRouter.post('/', (req, res) => {
     res.send(`Successfully added ${newIntake.name} to the database.`)
 });
 
+.delete('/:soda', (req, res) => {
+    const soda = req.params.soda; 
+    const singularItem = items.findIndex(index => index._id === itemsId)
+    index.splice()indexIndex, 1
+;})
+//delete recycleables
 
-
+.put('/', (req, res) => {
+})
+//put recycleables
 
 module.exports = intakeRouter;
