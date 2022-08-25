@@ -10,37 +10,37 @@ things = [
     {
         "name": "banana",
         "type": "fruit",
-        "price": 1.5,
+        "price": 3,
         _id: uuid()
     },
     {
         "name": "apple",
         "type": "fruit",
-        "price": 1.5,
+        "price": 1,
         _id: uuid() 
     },
     {
         "name": "orange",
         "type": "fruit",
-        "price": 1.75,
+        "price": 2,
         _id: uuid()
     },
     {
         "name": "video game",
         "type": "entertainment",
-        "price": 60.00,
+        "price": 60,
         _id: uuid()
     },
     {
         "name": "shampoo",
         "type": "hygiene",
-        "price": 5.00,
+        "price": 6,
         _id: uuid()
     },
     {
         "name": "monitor",
         "type": "tech",
-        "price": 50.00,
+        "price": 50,
         _id: uuid()
     }
 ];
