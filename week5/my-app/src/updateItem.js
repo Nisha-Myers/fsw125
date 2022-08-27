@@ -11,7 +11,7 @@ export default function updateItem(props){
             
             <button onClick = {() => {
 
-                props.updateItems(
+                props.updateItem(
                     props.id, 
                     document.querySelector(`#updateItem${props.count}`).value,
                     document.querySelector(`#updateDesc${props.count}`).value,

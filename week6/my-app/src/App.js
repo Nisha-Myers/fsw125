@@ -19,41 +19,41 @@ function App() {
   });
 
 
-  const newListedItems = async() =>{
+  const newlistItem = async() =>{
     await fetch("/items", {
       method: "POST", 
       headers: {
-        "Accept": "application/json", 
-        "Content-Type": "application/json"
+        "Accept": "my-app/json", 
+        "Content-Type": "my-app/json"
       },
       body: JSON.stringify({
         item: document.querySelector("#item").value,
         desc: document.querySelector("#desc").value,
-        ppu: document.querySelector("#ppu").value,
+        ppi: document.querySelector("#ppi").value,
         _id: uuid()
       })
     });
   };
 
 
-  const deleteItems = (id) =>{
+  const deleteItem = (id) =>{
     fetch(`/items/${id}`, {
       method: "DELETE"
     }) 
   };
 
-  const updateItems = (id, item, desc, ppu) =>{
+  const updateItem = (id, item, desc, ppi) =>{
     
     fetch(`/items/${id}`, {
       method: "PUT", 
       headers: {
-        "Accept": "application/json", 
-        "Content-Type": "application/json"
+        "Accept": "my-app/json", 
+        "Content-Type": "my-app/json"
       },
       body: JSON.stringify({
         item: item,
         desc: desc,
-        ppu: ppu
+        ppi: ppi
       })
     })
   };
@@ -61,12 +61,12 @@ function App() {
 
   return (
     <>
-      <newItem newListedItems = {newListedItems}/>
+      <newItem newlistItem = {newlistItem}/>
       <div id = "list">
         <listItem 
           data = {items}
-          updateItems = {updateItems}
-          deleteItems = {deleteItems}
+          updateItem = {updateItem}
+          deleteItem = {deleteItem}
         />
       </div>
     </>

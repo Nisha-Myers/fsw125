@@ -15,16 +15,16 @@ export default function listItem(props){
                     <div>
                         <h1>{e.item}</h1>
                         <h3>{e.desc}</h3>
-                        <h3>{`Price per item ${e.ppu}`}</h3>
+                        <h3>{`Price per item ${e.ppi}`}</h3>
                     </div> 
                     
                     <button onClick = {() =>{
-                        props.deleteItems(e._id)
+                        props.deleteItem(e._id)
                     }}>DELETE</button>
                     <updateItem
                         id = {e._id}
                         count = {count}
-                        updateItems = {props.updateItems}
+                        updateItem = {props.updateItem}
                     />
                 </div>
             );

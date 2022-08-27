@@ -2,8 +2,8 @@ import {useEffect, useState} from 'react';
 import {v4 as uuid} from 'uuid';
 
 
-import ListedItems from './ListedItems.js';
-import NewItems from './NewItems.js'
+import listItem from './listItem.js';
+import newItem from './newItem.js'
 import './App.css';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       .catch(err => console.log(err))
   })
 
-  const newListedItems = async() =>{
+  const newlistItem = async() =>{
     await fetch("/items", {
       method: "POST", 
       headers: {
@@ -26,19 +26,19 @@ function App() {
       body: JSON.stringify({
         item: document.querySelector("#item").value,
         desc: document.querySelector("#desc").value,
-        ppu: document.querySelector("#ppu").value,
+        ppi: document.querySelector("#ppi").value,
         _id: uuid()
       })
     })
   }
 
-  const deleteItems = (id) =>{
+  const deleteItem = (id) =>{
     fetch(`/items/${id}`, {
       method: "DELETE"
     }) 
   }
 
-  const updateItems = (id, item, desc, ppu) =>{
+  const updateItem = (id, item, desc, ppi) =>{
     fetch(`/items/${id}`, {
       method: "PUT", 
       headers: {
@@ -48,19 +48,19 @@ function App() {
       body: JSON.stringify({
         item: item,
         desc: desc,
-        ppu: ppu
+        ppi: ppi
       })
     })
   }
 
   return (
     <>
-      <NewItems newListedItems = {newListedItems}/>
+      <newItem newlistItem = {newlistItem}/>
       <div id = "list">
-        <ListedItems 
+        <listItem 
           data = {items}
-          updateItems = {updateItems}
-          deleteItems = {deleteItems}
+          updateItem = {updateItem}
+          deleteItem = {deleteItem}
         />
       </div>
     </>

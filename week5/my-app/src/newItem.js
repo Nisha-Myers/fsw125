@@ -23,7 +23,7 @@ export default function newItem(props){
             </div>
 
             <button onClick = { () => {
-                props.newListedItems()
+                props.newlistItem()
                 resetInput()
             }}>Submit your Input
             </button>
